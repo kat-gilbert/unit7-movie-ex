@@ -11,16 +11,20 @@ let movies: Movie[] = [
 
 movieRoutes.get("/", function (req, res) {
 
-    // let minRatingMovie = req.query.minyear as String;
-    // let maxRatingMovie = req.query.maxyear as String;
+    let minRatingMovie = req.query.minyear as String;
+    let maxRatingMovie = req.query.maxyear as String;
 
-    // if ()
-    // {
-
-    //     }
-    // else {
+    if (minRatingMovie && maxRatingMovie) {
+        let filteredMovies:Movie[] = [];
+        for (let i = 0; i < movies.length; i++) {
+            if (movies[i].year >= minRatingMovie && movies[i].year <= maxRatingMovie)
+            movies.push(movies[i]);
+        }
+        res.json(filteredMovies);
+    }
+    else {
     res.json(movies);
-    // }
+    }
 });
 
 movieRoutes.get("/:id", function (req, res) {
