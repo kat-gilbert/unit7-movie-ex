@@ -10,12 +10,14 @@ let movies: Movie[] = [
 ];
 
 movieRoutes.get("/", function (req, res) {
+
+
+    
     res.json(movies);
 });
 
 movieRoutes.get("/:id", function (req, res) {
  
-    // search array for id
     for (let i=0; i<movies.length; i++){
     if (parseInt(req.params.id) === movies[i].id) {
         res.json(movies[i]);
