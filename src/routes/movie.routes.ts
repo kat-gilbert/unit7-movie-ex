@@ -11,9 +11,16 @@ let movies: Movie[] = [
 
 movieRoutes.get("/", function (req, res) {
 
+    // let minRatingMovie = req.query.minyear as String;
+    // let maxRatingMovie = req.query.maxyear as String;
 
-    
+    // if ()
+    // {
+
+    //     }
+    // else {
     res.json(movies);
+    // }
 });
 
 movieRoutes.get("/:id", function (req, res) {
@@ -25,7 +32,7 @@ movieRoutes.get("/:id", function (req, res) {
     }
 }
     res.status(404);
-    res.send({"error": "Movie with id does not exist"});
+    res.send({"error": "Movie with that id does not exist"});
 });
 
 export default movieRoutes;
