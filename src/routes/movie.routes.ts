@@ -23,7 +23,7 @@ movieRoutes.get("/:id", function (req, res) {
     }
 }
     res.status(404);
-    res.send({"error": "Shop not found"});
+    res.send({"error": "Movie does not exist"});
 });
 
 export default movieRoutes;
